@@ -67,7 +67,7 @@ export default function CompanyPage() {
             { label: "Data Points", value: data.stats.count, isNum: true },
             { label: "Median TC", value: formatINR(data.stats.median_compensation), isNum: false },
             { label: "Avg TC", value: formatINR(data.stats.avg_compensation), isNum: false },
-            { label: "Roles tracked", value: [...new Set(data.salaries.map((s) => s.role))].length, isNum: true },
+            { label: "Roles tracked", value: Array.from(new Set(data.salaries.map((s) => s.role))).length, isNum: true },
           ].map((stat) => (
             <div key={stat.label} className="bg-card border border-border rounded-xl p-5">
               <div className="text-muted text-xs mb-1">{stat.label}</div>
