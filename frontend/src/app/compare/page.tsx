@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { fetchCompare, formatINR } from "../../lib/api";
