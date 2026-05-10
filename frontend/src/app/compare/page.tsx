@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { fetchCompare, formatINR } from "@/lib/api";
+import { fetchCompare, formatINR } from "../../lib/api";
 
 interface SalaryEntry {
   id: string;

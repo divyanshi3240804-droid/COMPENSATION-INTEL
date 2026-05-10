@@ -1,0 +1,24 @@
+# Query: @/lib/api
+# ContextLines: 1
+
+4 results - 4 files
+
+compensation-intel\frontend\src\app\company\[company]\page.tsx:
+  4  import Link from "next/link";
+  5: import { fetchCompany, formatINR } from "../../lib/api";
+  6  
+
+compensation-intel\frontend\src\app\compare\page.tsx:
+  4  import Link from "next/link";
+  5: import { fetchCompare, formatINR } from "../../lib/api";
+  6  
+
+compensation-intel\frontend\src\app\salaries\page.tsx:
+  3  import Link from "next/link";
+  4: import { fetchSalaries, fetchLevels, formatINR } from "../../lib/api";
+  5  
+
+compensation-intel\frontend\src\app\submit\page.tsx:
+  2  import { useState } from "react";
+  3: import { ingestSalary } from "../../lib/api";
+  4  

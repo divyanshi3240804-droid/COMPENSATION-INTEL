@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ingestSalary } from "@/lib/api";
+import { ingestSalary } from "../../lib/api";
 
 const LEVELS = ["L3", "L4", "L5", "L6", "L7", "L8", "SDE1", "SDE2", "SDE3", "Senior", "Staff", "Principal", "E3", "E4", "E5", "IC3", "IC4", "IC5"];
 const LOCATIONS = ["Bangalore", "Hyderabad", "Gurugram", "Mumbai", "Pune", "Chennai", "Delhi NCR", "Noida", "Remote - India", "Remote - Global"];
