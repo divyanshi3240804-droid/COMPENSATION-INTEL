@@ -27,9 +27,13 @@ interface CompanyData {
   };
 }
 
-export default function CompanyPage() {
-  const params = useParams();
-  const company = decodeURIComponent(params.company as string);
+export default function CompanyPage({ 
+  params,
+}:  {
+  params : {company : string};
+}) {
+  //const params = useParams();
+  const company = params.company ;
   const [data, setData] = useState<CompanyData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -105,7 +109,7 @@ export default function CompanyPage() {
         <div className="bg-card border border-border rounded-xl p-6 col-span-2">
           <h2 className="font-semibold mb-4 text-sm text-muted uppercase tracking-wide">Role Breakdown</h2>
           <div className="space-y-2">
-            {[...new Map(data.salaries.map((s) => [s.role + s.level, s])).values()]
+           {Array.from(new Map(data.salaries.map((s) => [s.role + s.level, s])).values())
               .sort((a, b) => b.total_compensation - a.total_compensation)
               .slice(0, 8)
               .map((s) => (

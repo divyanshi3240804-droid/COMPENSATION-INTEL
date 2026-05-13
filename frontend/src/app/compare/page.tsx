@@ -1,6 +1,5 @@
-"use client";
-import { useEffect, useState } from "react";
-import { Suspense } from "react";
+'use client';
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { fetchCompare, formatINR } from "../../lib/api";
@@ -41,7 +40,7 @@ function DiffBadge({ value }: { value: number }) {
   );
 }
 
-export default function ComparePage() {
+function CompareContent(){
   const searchParams = useSearchParams();
   const idsParam = searchParams.get("ids");
   const [data, setData] = useState<CompareData | null>(null);
@@ -115,6 +114,7 @@ export default function ComparePage() {
               </div>
             );
           })()}
+ 
 
           {/* Comparison table */}
           <div className="bg-card border border-border rounded-xl overflow-hidden">
@@ -176,5 +176,13 @@ export default function ComparePage() {
         </>
       )}
     </div>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<div className="text-center py-20 mono text-muted">loading...</div>}>
+      <CompareContent />
+    </Suspense>
   );
 }
